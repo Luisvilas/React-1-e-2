@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Exercício React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Baixar o arquivo de imagens
+* Colocar esse arquivo na pasta public/assets
+* Criar pasta components na pasta scr, e criar na pasta components um arquivo MenuComponent.js
 
-## Available Scripts
+Já no visual Code:
+* Inserir todo o código nesse arquivo
 
-In the project directory, you can run:
+1. As importações:
+   * usestates- gerencia componentes dentro de outros componentes
+   * media- exibe listas de imagens e textos juntos
+     
+2. Define a constante Menu para chamar os pratos:
+   * dentro dessa constante ele chama outra constante chamada pratos ou dishes,
+     essa que utiliza o import usestate, para utilizar listas de imagens e textos.
+   * Dentro dessa mesma constante ele cria a lista de Menu em "dishes.map"
+  
+3. Na próxima linha de código ele renderiza a linha de código para a página.
+  
+4. E por último exporta o componente Menu.
 
-### `npm start`
+-Esse código chama as imagens que estão na pasta public, e coloca na pagina.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-O código imita um cardápio de restaurante com descrições e imagens.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Apagar tudo do arquivo App.css
 
-### `npm test`
+No terminal da pasta confusion:
+* git init para criar um repositorio
+* git add .
+* git commit -m "nome do arquivo"
+* git remote add origin <url do git hub>
+* git push -u origin master
+Para subir os arquivos para o github
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Exercício parte 2 - Aula 10
 
-### `npm run build`
+## MenuComponent.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Imports utilizados
+* Card- componente para inserir um cartão com imagem e conteúdo.
+* CardImg- componente que serve para atribuir uma imagem ao Card.
+* CardImgOverlay- serve para colocar elementos sobre a imagem do Card.
+* CardText- atribuir um texto a essa imagem.
+* CardBody- nesse está inserido alguns outros componentes, serve para organizar o cartão.
+* CardTitle- utilizado para dar um título ao cartão selecionado.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Pra que serve o OnDishSelect
+* Essa função é chamada quando um prato é selecionado.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Pra que serve o renderDish
+* Para exibir os detalhes do prato selecionado
 
-### `npm run eject`
+### 4. Pra que serve props.dishes.map
+* Serve para mapear o menu de pratos a serem selecionados
+* Para cada prato selecionado ele vincula uma imagem, um texto e um título
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Dishes.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Quais são as propriedades
+* Essa array possui propriedades como, id, name, image, category, label, price e description.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Que tipo de date é utilizado
+* Ele utiliza o formato de data, apresentando dia, hora, minutos e segundos.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## App.js
 
-## Learn More
+### 1. Pra que serve o const[dishes] 
+* O dishes é criado para armazenar uma array com os pratos.
+* O useState(dishes) ele inicializa a lista de pratos importados do outro arquivo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 2. Explicar como funciona o Menu(dishes)
+* O componente Menu é renderizado e recebe a propriedade dishes. Sendo dishes a lista dos pratos importados do app.js.
+* o menu ele exibe os pratos na interface.
